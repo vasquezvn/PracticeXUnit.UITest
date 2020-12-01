@@ -1,6 +1,6 @@
 # PracticeXUnit.UITest
-Practice #1
 Practica #1
+
 > Validar el envio de un formulario
 	* ingresar a la pagina https://demoqa.com/automation-practice-form
 	* ingresar valores para nombre, apellido, email, telefono y subject
