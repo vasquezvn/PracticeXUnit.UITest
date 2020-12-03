@@ -27,7 +27,13 @@ namespace PracticeXUnit.UITest.Pages
             quantityField.SendKeys(quantity);
         }
 
-        public void PressAddToCarBtn() => Driver.FindElement(By.XPath("//span[@class='buttonnext84631916__content']")).Click();
+        public void PressAddToCarBtn()
+        {
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+            var addToCartBtn = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[@class='buttonnext2291024870__content']")));
+            addToCartBtn.Click();
+            //Driver.FindElement(By.XPath("//span[@class='buttonnext84631916__content']")).Click();
+        }
 
         public CartTheTeaStoryPage PressViewCartBtn()
         {
@@ -35,7 +41,8 @@ namespace PracticeXUnit.UITest.Pages
             //WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
             //var idFrame = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id($"{frames[2].GetAttribute("id")}")));
 
-            var idframe = frames[2].GetAttribute("id");
+            var idframe = frames[3].GetAttribute("id");
+            var idFrame = "tpaPopup-ki90ag5iiframe";
             Driver.SwitchTo().Frame(idframe);
             Driver.FindElement(By.Id("widget-view-cart-button")).Click();
             Driver.SwitchTo().ParentFrame();
