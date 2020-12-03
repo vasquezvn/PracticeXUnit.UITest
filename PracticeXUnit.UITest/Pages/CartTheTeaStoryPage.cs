@@ -20,10 +20,11 @@ namespace PracticeXUnit.UITest.Pages
         public string GetQuantity()
         {
             Driver.SwitchTo().Frame("TPAMultiSection_j4mrllwviframe");
-            var inputs = Driver.FindElements(By.CssSelector("._3sBNH"));
-            var inputNumber = inputs[0];
+            //var inputs = Driver.FindElements(By.CssSelector("._3sBNH"));
+            var inputs = Driver.FindElements(By.TagName("input"));
+            var inputNumber = inputs[0].GetAttribute("value");
 
-            return inputNumber.Text;
+            return inputNumber;
         }
     }
 }
