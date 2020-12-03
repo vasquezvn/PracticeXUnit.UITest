@@ -18,3 +18,11 @@ Practica #1
 - aplicar el uso de un solo driver para todos los test cases
 - implementar POM
 - implementar manejo de errores
+
+Practica #2
+> Validar un producto en el carro de compras
+- ingresar a https://www.theteastory.co/
+- Seleccionar Classic Blends Assoted Tea Box collection
+- agregar al carrito de compras 3 productos
+- Presionar en el boton View Cart
+- Validar que el producto y la cantidad selecciona es la correcta
