@@ -1,9 +1,6 @@
 ﻿using OpenQA.Selenium;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using OpenQA.Selenium.Support.UI;
 
 namespace PracticeXUnit.UITest.Pages
 {
@@ -19,8 +16,11 @@ namespace PracticeXUnit.UITest.Pages
 
         public string GetQuantity()
         {
+            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("TPAMultiSection_j4mrllwviframe")));
             Driver.SwitchTo().Frame("TPAMultiSection_j4mrllwviframe");
-            //var inputs = Driver.FindElements(By.CssSelector("._3sBNH"));
+
+            wait.Until(ExpectedConditions.ElementIsVisible(By.TagName("input")));
             var inputs = Driver.FindElements(By.TagName("input"));
             var inputNumber = inputs[0].GetAttribute("value");
 

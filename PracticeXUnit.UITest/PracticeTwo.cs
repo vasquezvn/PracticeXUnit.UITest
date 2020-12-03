@@ -1,9 +1,4 @@
 ﻿using PracticeXUnit.UITest.Pages;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace PracticeXUnit.UITest
@@ -28,12 +23,13 @@ namespace PracticeXUnit.UITest
             var theTeaStoryPage = new TheTeaStoryPage(ChromeDriverFixture.Driver);
             theTeaStoryPage.NavigateTo();
             var productClassicTeaPage = theTeaStoryPage.ClickClassicBlendsAssortedTea();
+            var quantity = "3";
 
-            productClassicTeaPage.SetQuantity("3");
+            productClassicTeaPage.SetQuantity(quantity);
             productClassicTeaPage.PressAddToCarBtn();
             var cartTheTeaStory = productClassicTeaPage.PressViewCartBtn();
 
-            var quantityTea = cartTheTeaStory.GetQuantity();
+            Assert.Equal(quantity, cartTheTeaStory.GetQuantity());
         }
     }
 }
