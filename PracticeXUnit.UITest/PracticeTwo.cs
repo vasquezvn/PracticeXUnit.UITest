@@ -24,7 +24,7 @@ namespace PracticeXUnit.UITest
             theTeaStoryPage.NavigateTo();
             var productClassicTeaPage = theTeaStoryPage.ClickClassicBlendsAssortedTea();
             var quantity = "3";
-
+            
             productClassicTeaPage.SetQuantity(quantity);
             productClassicTeaPage.PressAddToCarBtn();
             var cartTheTeaStory = productClassicTeaPage.PressViewCartBtn();

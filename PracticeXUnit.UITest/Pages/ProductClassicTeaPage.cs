@@ -18,9 +18,15 @@ namespace PracticeXUnit.UITest.Pages
         public void SetQuantity(string quantity)
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(30));
-            var quantityField = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//input[@value='1']")));
-            quantityField.Clear();
-            quantityField.SendKeys(quantity);
+            wait.Until(ExpectedConditions.ElementToBeClickable(By.TagName("input"))).Click();
+            var numberArrowUp = Driver.FindElement(By.ClassName("_11lkb"));
+
+            var quantityNumber = Int32.Parse(quantity);
+            for (int i = 1; i < quantityNumber; i++)
+            {
+                numberArrowUp.Click();
+            }
+
         }
 
         public void PressAddToCarBtn()
@@ -32,17 +38,20 @@ namespace PracticeXUnit.UITest.Pages
 
         public CartTheTeaStoryPage PressViewCartBtn()
         {
-            var frames = Driver.FindElements(By.TagName("iframe"));
-            var idframe = frames.Last().GetAttribute("id");
+            if (this.PageTitle != "Cart | The Tea Story")
+            {
+                var frames = Driver.FindElements(By.TagName("iframe"));
+                var idframe = frames.Last().GetAttribute("id");
 
-            Driver.SwitchTo().Frame(idframe);
+                Driver.SwitchTo().Frame(idframe);
 
-            WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-            var viewCartBtn = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("widget-view-cart-button")));
-            viewCartBtn.Click();
+                WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+                var viewCartBtn = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("widget-view-cart-button")));
+                viewCartBtn.Click();
 
-            Driver.SwitchTo().ParentFrame();
-
+                Driver.SwitchTo().ParentFrame();
+            }
+            
             return new CartTheTeaStoryPage(Driver);
         }
     }
