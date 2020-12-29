@@ -89,9 +89,10 @@ namespace PracticeXUnit.UITest.Pages
         }
         public void EnterSubjecs(string[] subjects)
         {
+            var subjectTextBox = Driver.FindElement(By.Id("subjectsInput"));
+
             foreach (var subject in subjects)
-            {
-                var subjectTextBox = Driver.FindElement(By.Id("subjectsInput"));
+            {    
                 subjectTextBox.SendKeys(subject);
                 subjectTextBox.SendKeys(Keys.Enter);
             }

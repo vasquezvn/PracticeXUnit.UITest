@@ -17,8 +17,8 @@ namespace PracticeXUnit.UITest.Pages
         public string GetQuantity()
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("TPAMultiSection_j4mrllwviframe")));
-            Driver.SwitchTo().Frame("TPAMultiSection_j4mrllwviframe");
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//iframe[@title='Cart Page']")));
+            Driver.SwitchTo().Frame(Driver.FindElement(By.XPath("//iframe[@title='Cart Page']")));
 
             wait.Until(ExpectedConditions.ElementIsVisible(By.TagName("input")));
             var inputs = Driver.FindElements(By.TagName("input"));
@@ -26,5 +26,6 @@ namespace PracticeXUnit.UITest.Pages
 
             return inputNumber;
         }
+
     }
 }

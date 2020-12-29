@@ -32,7 +32,7 @@ namespace PracticeXUnit.UITest.Pages
         public void PressAddToCarBtn()
         {
             WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
-            var addToCartBtn = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[@class='buttonnext2291024870__content']")));
+            var addToCartBtn = wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//span[@class='buttonnext1341111348__content']")));
             addToCartBtn.Click();
         }
 
@@ -41,9 +41,9 @@ namespace PracticeXUnit.UITest.Pages
             if (this.PageTitle != "Cart | The Tea Story")
             {
                 var frames = Driver.FindElements(By.TagName("iframe"));
-                var idframe = frames.Last().GetAttribute("id");
+                var nameframe = frames.Last().GetAttribute("name");
 
-                Driver.SwitchTo().Frame(idframe);
+                Driver.SwitchTo().Frame(nameframe);
 
                 WebDriverWait wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
                 var viewCartBtn = wait.Until(ExpectedConditions.ElementToBeClickable(By.Id("widget-view-cart-button")));
