@@ -50,5 +50,26 @@ namespace PracticeXUnit.UITest.Pages
 
             return isNameSaved && isLastNameSaved && isBloodGroupSaved && isHobbieSaved;
         }
+
+        public bool IsDivorcedMaritalState()
+        {
+            var result = false;
+
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//label[@class='active-drop-down']")));
+
+            var query = from maritalStatus in Driver.FindElements(By.XPath("//div[@id='emp_marital_status_inputfileddiv']//ul/li"))
+                        select maritalStatus;
+
+            foreach (var maritalStatus in query.Skip(1))
+            {
+                if (maritalStatus.Text.Equals("Divorced"))
+                {
+                    result = true;
+                }
+            }
+            
+            return result;
+        }
     }
 }

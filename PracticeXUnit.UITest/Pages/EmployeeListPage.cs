@@ -66,6 +66,20 @@ namespace PracticeXUnit.UITest.Pages
             return new PersonalDetailsPage(Driver);
         }
 
+        public bool IsSaveButtonDisplayed()
+        {
+            var result = false;
+
+            var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+            wait.Until(ExpectedConditions.ElementIsVisible(By.Id("systemUserSaveBtn")));
+
+            if (Driver.FindElement(By.Id("systemUserSaveBtn")).Text.ToLower().Equals("save"))
+            {
+                result = true;
+            }
+
+            return result;
+        }
 
     }
 }

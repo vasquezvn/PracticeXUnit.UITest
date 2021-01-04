@@ -63,5 +63,48 @@ namespace PracticeXUnit.UITest
             Assert.True(areValuesSaved);
 
         }
+
+        [Fact]
+        [Trait("Category", "Practice 3")]
+        public void ValidateMaritalStatus()
+        {
+            var random = new Random();
+
+            var employeeName = "TestUser" + random.Next(100);
+            var employeeLastName = "TestLastName";
+
+            var orangeHrmPage = new OrangeHrmPage(ChromeDriverFixture.Driver);
+            orangeHrmPage.Goto();
+            orangeHrmPage.EnterUsr("admin");
+            orangeHrmPage.EnterPass("admin123");
+            var orangeHrmDashboardPage = orangeHrmPage.PressLoginBtn();
+
+            orangeHrmDashboardPage.ClickPimOption();
+            var employeeListPage = orangeHrmDashboardPage.ClickAddEmployeeOption();
+
+            employeeListPage.EnterFirstName(employeeName);
+            employeeListPage.EnterLastName(employeeLastName);
+            employeeListPage.SetLocation("France Regional HQ");
+            var personalDetailsPage = employeeListPage.PressNextBtn();
+
+            Assert.False(personalDetailsPage.IsDivorcedMaritalState());
+        }
+
+        [Fact]
+        [Trait("Category", "Practice 3")]
+        public void ValidateSaveButtonIsDisplayedOnEmployeeListPage()
+        {
+            var orangeHrmPage = new OrangeHrmPage(ChromeDriverFixture.Driver);
+            orangeHrmPage.Goto();
+            orangeHrmPage.EnterUsr("admin");
+            orangeHrmPage.EnterPass("admin123");
+            var orangeHrmDashboardPage = orangeHrmPage.PressLoginBtn();
+
+            orangeHrmDashboardPage.ClickPimOption();
+            var employeeListPage = orangeHrmDashboardPage.ClickAddEmployeeOption();
+
+            Assert.False(employeeListPage.IsSaveButtonDisplayed());
+            
+        }
     }
 }

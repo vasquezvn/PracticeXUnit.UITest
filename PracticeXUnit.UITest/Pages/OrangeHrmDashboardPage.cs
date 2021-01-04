@@ -32,5 +32,6 @@ namespace PracticeXUnit.UITest.Pages
 
             return new EmployeeListPage(Driver);
         }
+
     }
 }
