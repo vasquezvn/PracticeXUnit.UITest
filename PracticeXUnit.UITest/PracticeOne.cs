@@ -1,6 +1,5 @@
 ﻿using Xunit;
 using PracticeXUnit.UITest.Pages;
-using System;
 
 namespace PracticeXUnit.UITest
 {
