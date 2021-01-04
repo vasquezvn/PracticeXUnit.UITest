@@ -29,7 +29,7 @@ Practica #2
 
 Practica #3
 > Validar que el usuario creado se muestre en la lista de empleados
-	* ingresar a https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard Utilizar (Use: user: admin passw: admin123)
+  * ingresar a https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard Utilizar (Use: user: admin passw: admin123)
   * Click on PIM option
   * Click on Add employee
   * Fill the form with valid values and click on Next button (only required fields)
@@ -39,14 +39,14 @@ Practica #3
   * Verify that the created employee is displayed on employee list.
 
 > Validar que el dropdown de status contiene la opcion divorciado al agregar un empleado
-	* ingresar a https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard Utilizar (Use: user: admin passw: admin123)
+* ingresar a https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard Utilizar (Use: user: admin passw: admin123)
   * Click on PIM option
   * Click on Add employee
   * Fill the form with valid values and click on Next button (only required fields)
   * Verify that Marital Status dropdown contains Divorced option.
 	
 > Validar que el boton Save es mostrado
-	* ingresar a https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard Utilizar (Use: user: admin passw: admin123)
+* ingresar a https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard Utilizar (Use: user: admin passw: admin123)
   * Click on PIM option
   * Click on Add employee
   * Verify if Save button is displayed.
