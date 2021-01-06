@@ -26,3 +26,27 @@ Practica #2
 - agregar al carrito de compras 3 productos
 - Presionar en el boton View Cart
 - Validar que el producto y la cantidad selecciona es la correcta
+
+Practica #3
+> Validar que el usuario creado se muestre en la lista de empleados
+  * ingresar a https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard Utilizar (Use: user: admin passw: admin123)
+  * Click on PIM option
+  * Click on Add employee
+  * Fill the form with valid values and click on Next button (only required fields)
+  * Complete Wizard Personal Details with valid values (only required fields) and click on Next button
+  * Fill Wizard job with valid values (only required fields) and click on Save button
+  * Click on Employee list
+  * Verify that the created employee is displayed on employee list.
+
+> Validar que el dropdown de status contiene la opcion divorciado al agregar un empleado
+* ingresar a https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard Utilizar (Use: user: admin passw: admin123)
+  * Click on PIM option
+  * Click on Add employee
+  * Fill the form with valid values and click on Next button (only required fields)
+  * Verify that Marital Status dropdown contains Divorced option.
+	
+> Validar que el boton Save es mostrado
+* ingresar a https://orangehrm-demo-6x.orangehrmlive.com/client/#/dashboard Utilizar (Use: user: admin passw: admin123)
+  * Click on PIM option
+  * Click on Add employee
+  * Verify if Save button is displayed.
