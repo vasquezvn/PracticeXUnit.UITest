@@ -14,7 +14,7 @@ namespace PracticeXUnit.UITest
 
             ChromeDriverFixture.Driver.Manage().Cookies.DeleteAllCookies();
             ChromeDriverFixture.Driver.Navigate().GoToUrl("about:blank");
-            chromeDriverFixture.Driver.Manage().Window.Maximize();
+            ChromeDriverFixture.Driver.Manage().Window.Maximize();
 
         }
 
