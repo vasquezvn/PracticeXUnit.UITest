@@ -50,3 +50,21 @@ Practica #3
   * Click on PIM option
   * Click on Add employee
   * Verify if Save button is displayed.
+  
+Practica #4
+> Create tables to store data for customer entity with the following fields
+* Crear tablas con la siguiente estructura:
+Table: Client,  table preferences
+firstName, lastName, email, programme, courses
+"firstName" : "Silver"
+"latName" : "white"
+"email" : "whitestripes@gmail.com"
+"programme" : "Modern music"
+preferences: "butter", "peanut"
+
+* crear metodos para realizar las siguiente operaciones
+- GET all clients
+- GET a client by Id
+- Delete a client by Id
+- Update a client by ID
+- Insert a client
