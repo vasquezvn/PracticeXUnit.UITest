@@ -68,3 +68,19 @@ preferences: "butter", "peanut"
 - Delete a client by Id
 - Update a client by ID
 - Insert a client
+
+Practica #5
+> Crear un test case que verifique si dado un numero, este tiene mas de dos factores primos (incluido el numero 1)
+> Crear test method para verificar los siguientes valores desde el webAPI
+- Obtener el primer estudiante
+- Crear un nuevo estudiante
+- Actualizar el correo del primer estudiante
+* Metodos soportados por el API
+- GET /Student/list
+- GET /student/{id}
+- POST /student
+- PUT /student/{id}
+> Validar que el formulario de contacto se envio
+* ingresar a https://www.theteastory.co/
+* llenar el formualrio de Contact Us
+* Verificar que el mensaje "We'll get back to you shortly" es mostrado
