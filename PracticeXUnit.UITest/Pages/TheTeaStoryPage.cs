@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System;
 
 namespace PracticeXUnit.UITest.Pages
 {
@@ -17,6 +18,15 @@ namespace PracticeXUnit.UITest.Pages
             Driver.FindElement(By.XPath("//div[@class='slick-slide slick-active slick-current']")).Click();
             
             return new ProductClassicTeaPage(Driver);
+        }
+
+        public ContactUsPage ClickContactUsLink()
+        {
+            IJavaScriptExecutor js = (IJavaScriptExecutor)Driver;
+            var regionElement = Driver.FindElement(By.Id("comp-jr09do7i5label"));
+            js.ExecuteScript("arguments[0].click();", regionElement);
+
+            return new ContactUsPage(Driver);
         }
     }
 }
